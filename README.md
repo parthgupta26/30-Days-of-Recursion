@@ -1,4 +1,4 @@
-# 100-Days-of-Recursion-(C++)
+# 30-Days-of-Recursion-(C++)
 ## Day 1
 -
 -
