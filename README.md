@@ -15,3 +15,5 @@
 - Print all the subsequences of the given string.
 - Print all the key pad combinations.
 - Print all the stair paths from nth position to ground level (0).
+- Print all the paths from top left corner to bottom right corner of the given maze (you are allowed to move only right and down one step at a time).
+- Print all the paths from top left corner to bottom right corner of the given maze (you are allowed to move only right, down, and diagonally with any number of steps).
