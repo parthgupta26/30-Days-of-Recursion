@@ -8,9 +8,9 @@
 - Display array elements in reverse.
 ## Day 2
 - Print maximum number in an array.
-- Given a number print the first occurence of that number.
-- Given a number print the last occurence of that number.
-- Given a number print all the occurences of that number.
+- Given a number print the first occurence of that number in an array.
+- Given a number print the last occurence of that number in an array.
+- Given a number print all the occurences of that number in an array.
 ## Day 3
 - Print all the subsequences of the given string.
 - Print all the key pad combinations.
