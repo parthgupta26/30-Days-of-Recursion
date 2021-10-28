@@ -18,3 +18,4 @@
 - Print all the paths from top left corner to bottom right corner of the given maze (you are allowed to move only right and down one step at a time).
 - Print all the paths from top left corner to bottom right corner of the given maze (you are allowed to move only right, down, and diagonally with any number of steps).
 ## Day 4
+- Print all the permutations of the given string.
