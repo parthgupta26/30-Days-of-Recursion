@@ -20,3 +20,4 @@
 ## Day 4
 - Print all the permutations of the given string.
 - Print all the encodings of the given number.
+## Day 5
