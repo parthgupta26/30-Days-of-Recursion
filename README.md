@@ -27,3 +27,13 @@
 - Print all possible arrangements of queens in the chessboard for a given value of n (N Queens Problem).
 - Print all moves of a knight starting from source such that knight visits all cells of the board exactly once (Knights tour in the chessboard).
 ## Day 6
+- You are given n boxes and r non-identical items, print all the permutations possible of placing r items in the box of lenght n.
+- You are given n boxes and r identical items, print all the combinations possible of placing r items in the box of lenght n.
+## Day 7 (Generic Tree Operations)
+- Construction of a Generic Tree using a Stack.
+- Display the Generic Tree.
+- Print total number of nodes in the Generic Tree.
+- Print maximum value in the Generic Tree, among all nodes.
+- Print height of the Generic Tree.
+- Level Order Traversal of a Generic Tree using BFS.
+## Day 8 (Generic Tree Operations)
