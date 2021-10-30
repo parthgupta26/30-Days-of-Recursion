@@ -22,3 +22,8 @@
 - Print all the permutations of the given string.
 - Print all the encodings of the given number.
 ## Day 5
+- Print all the maze paths from source to destination with obstacles (you are allowed to move in all the four directions).
+- Print all the subsets in the array whose sum is equal to a given target (Target Sum Subset Problem).
+- Print all possible arrangements of queens in the chessboard for a given value of n (N Queens Problem).
+- Print all moves of a knight starting from source such that knight visits all cells of the board exactly once (Knights tour in the chessboard).
+## Day 6
