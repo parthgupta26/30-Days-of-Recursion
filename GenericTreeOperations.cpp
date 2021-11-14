@@ -1,9 +1,5 @@
-#include <iostream>
-#include <vector>
-#include <stack>
-#include <algorithm>
+#include<bits/stdc++.h>
 #include <climits>
-#include <queue>
 
 using namespace std;
 
