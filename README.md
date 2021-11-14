@@ -37,3 +37,7 @@
 - Print height of the Generic Tree.
 - Level Order Traversal of a Generic Tree using BFS.
 ## Day 8 (Generic Tree Operations)
+- ZigZag Level Order Traversal of a Generic Tree using BFS.
+- Invert the Generic tree or display the mirror image.
+- Remove all the leaf nodes of the given Generic Tree.
+## Day 9 (Generic Tree Operations)
