@@ -1,5 +1,4 @@
-#include<bits/stdc++.h>
-#include <climits>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -133,6 +132,7 @@ Node* removeLeaves(Node* root) {
         if(child->children.size() == 0) {
             delete(child);
             // update the parent children vector
+            // left shifting all values
             for(int j = i; j < root->children.size() - 1; j++) {
                 root->children[j] = root->children[j + 1];
             }
@@ -146,6 +146,139 @@ Node* removeLeaves(Node* root) {
     return root;
 }
 
+bool findElement(Node* root, int val) {
+    if(root->data == val) {
+        return true;
+    }
+    else {
+        for(Node *child : root->children) {
+            bool found = findElement(child, val);
+            if(found == true) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+vector<int> nodeToRootPath(Node* root, int val) {
+    if(root->data == val) {
+        return {root->data};
+    }
+    for(Node *child : root->children) {
+        vector<int> pathToVal = nodeToRootPath(child, val);
+        if(pathToVal.size() > 0) {
+            pathToVal.push_back(root->data);
+            return pathToVal;
+        }
+    }
+    return {};
+}
+
+int lca(Node* root, int val1, int val2) {
+    vector<int> path1 = nodeToRootPath(root, val1);
+    vector<int> path2 = nodeToRootPath(root, val2);
+    int i = path1.size() - 1;
+    int j = path2.size() - 1;
+    while(i >= 0 && j >= 0 && path1[i] == path2[j]) {
+        i--;
+        j--;
+    }
+    i++;
+    j++;
+    return path1[i];
+}
+
+int distanceBetweenNodes(Node* root, int val1, int val2) {
+    vector<int> path1 = nodeToRootPath(root, val1);
+    vector<int> path2 = nodeToRootPath(root, val2);
+    int i = path1.size() - 1;
+    int j = path2.size() - 1;
+    while(i >= 0 && j >= 0 && path1[i] == path2[j]) {
+        i--;
+        j--;
+    }
+    i++;
+    j++;
+    return i + j;
+}
+
+bool areSimilar(Node* root1, Node* root2) {
+    if(root1->children.size() != root2->children.size()) {
+        return false;
+    }
+    int n = root1->children.size();
+    for(int i = 0; i < n; i++) {
+        Node *child1 = root1->children[i];
+        Node *child2 = root2->children[i];
+        if(areSimilar(child1, child2) == false) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool areMirrorImage(Node* root1, Node* root2) {
+    if(root1->children.size() != root2->children.size()) {
+        return false;
+    }
+    int n = root1->children.size();
+    for(int i = 0; i < n; i++) {
+        Node *child1 = root1->children[i];
+        Node *child2 = root2->children[n - 1 - i];
+        if(areMirrorImage(child1, child2) == false) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool isSymmetric(Node* root) {
+    return areMirrorImage(root, root);
+}
+
+Node* pre = NULL;
+Node* suc = NULL;
+int state = 0;
+
+void findPredecessorAndSuccessor(Node* root, int val) {
+    if(state == 0) {
+        if(root->data == val) {
+            state = 1;
+        }
+        else {
+            pre = root;
+        }
+    }
+    else if(state == 1) {
+        suc = root;
+        state = 2;
+        return;
+    }
+    for(Node *child : root->children) {
+        findPredecessorAndSuccessor(child, val);
+    }
+}
+
+int ceilVal = INT_MAX;
+int floorVal = INT_MIN;
+
+void findCeilAndFloorValues(Node* root, int val) {
+    if(node->data > data) {
+        ceilVal = min(ceilVal, node->data);
+    }
+    if(node->data < data) {
+        floorVal = max(floorVal, node->data);
+    }
+    for(Node *child : root->children) {
+        findCeilAndFloorValues(child, val);
+    }
+}
+
+void findKthLargestElement(Node* root, int k) {
+    
+}
+
 int main() {
     int n;
     cin >> n;
@@ -155,26 +288,6 @@ int main() {
     }
     root = constructGenericTree(arr);
     cout << "Tree Structure:\n\n";
-    display(root);
-    cout << endl;
-    cout << "Number of Nodes in the Tree: " << getSizeOfGenericTree(root);
-    cout << endl << endl;
-    cout << "Max value of the Node in the Tree: " << printMaxValueInGenericTree(root);
-    cout << endl << endl;
-    cout << "Height of the Tree in terms of Edges: " << printHeightOfGenericTree(root);
-    cout << endl << endl;
-    cout << "Level Order Traversal:\n\n";
-    levelOrderTraversal(root);
-    cout << endl << endl;
-    cout << "Level Order Traversal ZigZag:\n\n";
-    levelOrderTraversalZigZag(root);
-    cout << endl << endl;
-    cout << "Inverted Generic Tree:\n\n";
-    invertGenericTree(root);
-    display(root);
-    cout << endl << endl;
-    cout << "Tree After Removing Leaf Nodes:\n\n";
-    root = removeLeafs(root);
     display(root);
     return 0;
 }
